@@ -301,3 +301,7 @@ executable(
   cpp_args: [use_minigbm ? ['-DUSE_MINIGBM'] : [], common_cppflags],
   include_directories: use_minigbm ? include_directories('external/minigbm/cros_gralloc') : [] + inc_extra_v34,
 )
+
+install_data('android.hardware.graphics.composer@2.1-service.drmfb.xml',
+  install_dir : join_paths(get_option('datadir'), 'vintf')
+)
